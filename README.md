@@ -11,8 +11,6 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
 [![Colab](https://img.shields.io/badge/Google%20Colab-Ready-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com)
-[![License](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)](LICENSE)
-[![Conference](https://img.shields.io/badge/Target-RV'26-8B5CF6?style=for-the-badge)](https://www.runtime-verification.org/)
 
 <br>
 
@@ -148,16 +146,16 @@ Our end-to-end pipeline consists of three major modules executed sequentially:
                                  ▼
  ┌───────────────────────────────────────────────────────────────────────┐
  │  MODULE 2: Spatial-Temporal Stabilization  ("Sandwich" Pipeline)      │
- │  ┌───────────────────────────────────────────────────────────────┐   │
- │  │ ① DSU Pass 1 — Frame grouping (SSIM) + Box clustering (IoM)  │   │
- │  │                → Fixes label flickering via majority voting    │   │
- │  ├───────────────────────────────────────────────────────────────┤   │
- │  │ ② Hybrid SORT — Kalman Filter + Hungarian matching            │   │
- │  │                → Bridges occlusion gaps up to 25 frames        │   │
- │  ├───────────────────────────────────────────────────────────────┤   │
- │  │ ③ DSU Pass 2 — Re-verify labels on interpolated boxes         │   │
- │  │                → Guarantees temporal label consistency          │   │
- │  └───────────────────────────────────────────────────────────────┘   │
+ │  ┌───────────────────────────────────────────────────────────────┐    │
+ │  │ ① DSU Pass 1 — Frame grouping (SSIM) + Box clustering (IoM)   │    │
+ │  │                → Fixes label flickering via majority voting   │    │
+ │  ├───────────────────────────────────────────────────────────────┤    │
+ │  │ ② Hybrid SORT — Kalman Filter + Hungarian matching            │    │
+ │  │                → Bridges occlusion gaps up to 25 frames       │    │
+ │  ├───────────────────────────────────────────────────────────────┤    │
+ │  │ ③ DSU Pass 2 — Re-verify labels on interpolated boxes         │    │
+ │  │                → Guarantees temporal label consistency        │    │
+ │  └───────────────────────────────────────────────────────────────┘    │
  └───────────────────────────────┬───────────────────────────────────────┘
                                  │  Stabilized tool trajectories
                                  ▼
@@ -170,10 +168,10 @@ Our end-to-end pipeline consists of three major modules executed sequentially:
                                  ║
                                  ▼
  ╔═══════════════════════════════════════════════════════════════════════╗
- ║                   ✅  OUTPUT: Verified Clinical Metrics               ║
- ║   ├── Tool usage timelines & on-off heatmaps                         ║
+ ║                   ✅  OUTPUT: Verified Clinical Metrics              ║
  ║   ├── Violation reports for surgical skill assessment                 ║
- ║   └── Logically guaranteed, hallucination-free characterization      ║
+ ║   └── Logically guaranteed, hallucination-free characterization       ║
+ ║   └── Logically guaranteed, hallucination-free characterization       ║
  ╚═══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -307,7 +305,7 @@ All post-processing follows a strict **"Sandwich" pipeline**:
 
 ```
   ┌─────────────┐      ┌───────────────────────┐      ┌─────────────┐
-  │  DSU Pass 1  │  ──► │  Gap-Fill (Hybrid SORT) │  ──► │  DSU Pass 2  │
+  │  DSU Pass 1 │  ──► │ Gap-Fill (Hybrid SORT)│  ──► │ DSU Pass 2  │
   └─────────────┘      └───────────────────────┘      └─────────────┘
    Fix existing          Track & interpolate            Re-verify new
    label conflicts       across occlusions              box labels
@@ -338,7 +336,7 @@ Once tool trajectories are stabilized, we route the data through a **formal runt
 ### Verification Architecture
 
 ```
-  ┌──────────────┐     Raw Detections      ┌──────────────┐     Verdicts     ┌──────────────┐
+  ┌──────────────┐     Raw Detections       ┌──────────────┐     Verdicts     ┌──────────────┐
   │  Mask R-CNN  │  ──────────────────────► │   Monitor    │ ───────────────► │  Surgeon /   │
   │  & Tracking  │       (Inputs)           │              │    (Outputs)     │    Logs      │
   └──────────────┘                          └──────▲───────┘                  └──────────────┘
@@ -582,39 +580,3 @@ viz.compare(surgery, baseline_pv, corrected_pv,
 - Falcone et al. — *Runtime Verification of Safety-Progress Properties*. RV 2009.
 
 <br>
-
----
-
-<br>
-
-## 👥 Authors
-
-<div align="center">
-
-| Name | Affiliation |
-|:-----|:------------|
-| **Ansh Gupta** | IIIT Bangalore |
-| **Kunal Jindal** | IIIT Bangalore |
-| **Madhav Rao** | IIIT Bangalore |
-| **Saumya Shankar** | IIIT Bangalore |
-| **Vikas Vazhayil** | NIMHANS |
-
-</div>
-
-<br>
-
----
-
-<div align="center">
-
-<br>
-
-**⭐ If you find this work useful, please consider starring this repository! ⭐**
-
-<br>
-
-*Developed at the [International Institute of Information Technology Bangalore (IIIT-B)](https://www.iiitb.ac.in/) in collaboration with the [National Institute of Mental Health and Neurosciences (NIMHANS)](https://nimhans.ac.in/), India.*
-
-<br>
-
-</div>
