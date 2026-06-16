@@ -10,6 +10,8 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org)
+[![Go](https://img.shields.io/badge/Go-1.20+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://golang.org)
+[![C](https://img.shields.io/badge/C-GCC-A8B9CC?style=for-the-badge&logo=c&logoColor=white)](https://gcc.gnu.org/)
 [![Colab](https://img.shields.io/badge/Google%20Colab-Ready-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com)
 
 <br>
@@ -169,7 +171,6 @@ Our end-to-end pipeline consists of three major modules executed sequentially:
  ╔═══════════════════════════════════════════════════════════════════════╗
  ║                   ✅  OUTPUT: Verified Clinical Metrics              ║
  ║   ├── Violation reports for surgical skill assessment                 ║
- ║   └── Logically guaranteed, hallucination-free characterization       ║
  ║   └── Logically guaranteed, hallucination-free characterization       ║
  ╚═══════════════════════════════════════════════════════════════════════╝
 ```
@@ -350,12 +351,14 @@ The monitor is **strictly unidirectional** — it evaluates the ML pipeline's ou
 
 ### Framework: easy-rte
 
-We utilize the [**easy-rte**](https://github.com/PRETgroup/easy-rte) open-source toolchain for runtime enforcement. Policies are encoded in `.erte` configuration files and modeled as **Finite State Machines (FSMs)** with two states:
+We utilize the [**easy-rte**](https://github.com/PRETgroup/easy-rte) open-source toolchain for runtime enforcement. `easy-rte` provides an easy-to-use implementation of bi-directional Runtime Enforcement, allowing us to bound the behavior of unpredictable systems to ensure they obey desired policies. 
+
+Policies are encoded in `.erte` configuration files (which use Structured Text syntax) and are modeled as **Finite State Machines (FSMs)** with two states:
 
 - **`s₀`** — Safe / accepting state (normal operation)
 - **`violation`** — Policy breach detected
 
-Each video frame is evaluated independently: the FSM resets to `s₀` before each frame, and the resulting state is reported.
+Each video frame is evaluated independently: the FSM resets to `s₀` before each frame, and the resulting state is reported. By formalizing this step, we prove mathematical adherence to clinical guidelines.
 
 <br>
 
@@ -458,7 +461,7 @@ The dataset comprises intra-operative neurosurgical video recordings of **Insula
 
 ## 📂 Repository Structure
 
-```
+```text
 Neurosurgical-tool-detection-and-policy-based-Characterization/
 │
 ├── 📜 FINAL_PE_object_detection.py      # Complete detection & tracking pipeline
@@ -469,6 +472,10 @@ Neurosurgical-tool-detection-and-policy-based-Characterization/
 │                                         #   └── Visualization utilities
 │
 ├── 📂 easy-rte/                          # Formal runtime enforcement toolchain
+│   ├── example/surgical_policy/          #   Our surgical policies & C monitor
+│   │   ├── surgical_policy.erte          #   Policies defined in Structured Text
+│   │   ├── surgical_policy_main.c        #   C harness for the generated FSM
+│   │   └── test_image.py                 #   Python script bridging detection outputs
 │   ├── goEFB/                            #   Go-based enforcer/monitor backend
 │   └── ...                               #   Policy compiler & FSM synthesizer
 │
@@ -492,18 +499,24 @@ Neurosurgical-tool-detection-and-policy-based-Characterization/
 ### Prerequisites
 
 ```bash
+# 1. Install deep learning and CV dependencies (Python 3.8+)
 pip install torch torchvision
 pip install scikit-image scikit-learn
 pip install opencv-python
 pip install filterpy                 # Kalman Filter for SORT tracking
 pip install numpy matplotlib pillow
+
+# 2. Install dependencies for the formal monitor
+# You will need GCC (C compiler) installed on your system.
+# (Optional) If you want to modify and recompile the `.erte` policies themselves, 
+# you will also need Go (https://golang.org/doc/install).
 ```
 
-### Quick Start (Google Colab)
+### Running the Full Pipeline
 
 ```python
 # ──────────────────────────────────────────────────────────────
-# Step 1: Mount Google Drive & Load Model
+# Step 1: Mount Google Drive & Load Model (Colab Example)
 # ──────────────────────────────────────────────────────────────
 from google.colab import drive
 drive.mount('/content/gdrive')
@@ -537,7 +550,7 @@ processor.run_method(
 )
 
 # ──────────────────────────────────────────────────────────────
-# Step 4: Visualize Results
+# Step 4: Visualize Tracking Results
 # ──────────────────────────────────────────────────────────────
 viz = DetectionVisualizer(IMAGES_ROOT, LABEL_TO_NAME)
 
@@ -548,6 +561,24 @@ corrected_pv = processor.get_preds_video("DSU + Hybrid SORT + DSU", surgery)
 # Side-by-side comparison: Raw vs Corrected
 viz.compare(surgery, baseline_pv, corrected_pv,
             frame_id=15, titles=["Raw Model", "After Sandwich Pipeline"])
+```
+
+```bash
+# ──────────────────────────────────────────────────────────────
+# Step 5: Formal Runtime Monitoring via easy-rte
+# ──────────────────────────────────────────────────────────────
+# The `.erte` policies have already been compiled into C code for you.
+# (Optional) If you modify `surgical_policy.erte`, recompile the C code:
+#   cd easy-rte
+#   make c_enf PROJECT=surgical_policy
+
+# Build the runtime monitor executable
+cd easy-rte/example/surgical_policy
+gcc -o surgical_policy F_surgical_policy.c surgical_policy_main.c
+
+# Run the formal verification monitor against the tracking trace
+# The test_image.py script feeds the corrected bounding boxes into the monitor
+./surgical_policy
 ```
 
 <br>
