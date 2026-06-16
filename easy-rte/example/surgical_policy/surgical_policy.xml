@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnforcedFunction Name="surgical_policy">
+	<Interface>
+		<Input Name="Suction" Type="bool" Constant="false" Comment=""></Input>
+		<Input Name="Bipolar" Type="bool" Constant="false" Comment=""></Input>
+		<Input Name="Dissecting" Type="bool" Constant="false" Comment=""></Input>
+		<Input Name="Cusa" Type="bool" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_Suction" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_Bipolar" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_Dissecting" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_Cusa" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_OFF_Suction" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_OFF_Bipolar" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_OFF_Dissecting" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="CONSEC_OFF_Cusa" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="TOTAL_Suction" Type="uint32_t" Constant="false" Comment=""></Input>
+		<Input Name="IN_COOLDOWN_Dissecting" Type="bool" Constant="false" Comment=""></Input>
+		<Input Name="Dissecting_Ever_Used" Type="bool" Constant="false" Comment=""></Input>
+	</Interface>
+	<Policy Name="p1">
+		<InternalVars></InternalVars>
+		<Machine>
+			<PState>s0</PState>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( !( Suction and Bipolar ) )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Suction and Bipolar )</Condition>
+				<Recover>
+					<VarName>Bipolar</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+		</Machine>
+	</Policy>
+	<Policy Name="p2_dissecting_time">
+		<InternalVars>
+			<VarDeclaration Name="MAX_Dissecting" Type="uint32_t" Constant="true" InitialValue="5" Comment=""></VarDeclaration>
+		</InternalVars>
+		<Machine>
+			<PState>s0</PState>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( Dissecting and ( CONSEC_Dissecting &lt;= MAX_Dissecting ) )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Dissecting and ( CONSEC_Dissecting &gt; MAX_Dissecting ) )</Condition>
+				<Recover>
+					<VarName>Dissecting</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+		</Machine>
+	</Policy>
+	<Policy Name="p3_total_suction">
+		<InternalVars>
+			<VarDeclaration Name="MAX_TOTAL_Suction" Type="uint32_t" Constant="true" InitialValue="15" Comment=""></VarDeclaration>
+		</InternalVars>
+		<Machine>
+			<PState>s0</PState>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Suction )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( Suction and ( TOTAL_Suction &lt;= MAX_TOTAL_Suction ) )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Suction and ( TOTAL_Suction &gt; MAX_TOTAL_Suction ) )</Condition>
+				<Recover>
+					<VarName>Suction</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+		</Machine>
+	</Policy>
+	<Policy Name="p4_cooldown_dissecting">
+		<InternalVars></InternalVars>
+		<Machine>
+			<PState>s0</PState>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( Dissecting and !IN_COOLDOWN_Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Dissecting and IN_COOLDOWN_Dissecting )</Condition>
+				<Recover>
+					<VarName>Dissecting</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+		</Machine>
+	</Policy>
+	<Policy Name="p5_precedence_cusa">
+		<InternalVars></InternalVars>
+		<Machine>
+			<PState>s0</PState>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Cusa )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>s0</Destination>
+				<Condition>( Cusa and Dissecting_Ever_Used )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Cusa and !Dissecting_Ever_Used )</Condition>
+				<Recover>
+					<VarName>Cusa</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+		</Machine>
+	</Policy>
+</EnforcedFunction>

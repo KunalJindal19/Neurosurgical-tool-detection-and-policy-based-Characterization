@@ -1,0 +1,108 @@
+function surgical_policy;
+
+interface of surgical_policy {
+    // Inputs from your Python ML Tracker
+    in bool Suction;
+    in bool Bipolar;
+    in bool Dissecting;
+    in bool Cusa;
+
+    // Consecutive frame counts — ON (computed externally in Python)
+    in uint32_t CONSEC_Suction;
+    in uint32_t CONSEC_Bipolar;
+    in uint32_t CONSEC_Dissecting;
+    in uint32_t CONSEC_Cusa;
+
+    // Consecutive frame counts — OFF (computed externally in Python)
+    in uint32_t CONSEC_OFF_Suction;
+    in uint32_t CONSEC_OFF_Bipolar;
+    in uint32_t CONSEC_OFF_Dissecting;
+    in uint32_t CONSEC_OFF_Cusa;
+
+    // Cumulative total usage for Suction (across all frames)
+    in uint32_t TOTAL_Suction;
+
+    // Cooldown flag for Dissecting (computed externally)
+    // True if Dissecting was used for >=5 consecutive frames and has not
+    // been off for >=5 frames since
+    in bool IN_COOLDOWN_Dissecting;
+
+    // Precedence flag: has Dissecting been used at least once so far?
+    in bool Dissecting_Ever_Used;
+}
+
+//=========================================================
+// POLICY P1: Suction and Bipolar cannot be active together
+//=========================================================
+policy p1 of surgical_policy {
+    states {
+        s0 {
+            -> violation on (Suction && Bipolar) recover Bipolar := 0;
+            -> s0 on (!(Suction && Bipolar));
+        }
+    }
+}
+
+//=========================================================
+// POLICY P2: Dissecting Maximum Continuous Usage
+// Limit: 5 consecutive frames
+//=========================================================
+policy p2_dissecting_time of surgical_policy {
+    internals {
+        constant uint32_t MAX_Dissecting := 5;
+    }
+    states {
+        s0 {
+            -> violation on (Dissecting && (CONSEC_Dissecting > MAX_Dissecting)) recover Dissecting := 0;
+            -> s0 on (!Dissecting);
+            -> s0 on (Dissecting && (CONSEC_Dissecting <= MAX_Dissecting));
+        }
+    }
+}
+
+//=========================================================
+// POLICY P3: Suction Cumulative Total Usage
+// Total usage across entire surgery must not exceed 15 frames
+//=========================================================
+policy p3_total_suction of surgical_policy {
+    internals {
+        constant uint32_t MAX_TOTAL_Suction := 15;
+    }
+    states {
+        s0 {
+            -> violation on (Suction && (TOTAL_Suction > MAX_TOTAL_Suction)) recover Suction := 0;
+            -> s0 on (!Suction);
+            -> s0 on (Suction && (TOTAL_Suction <= MAX_TOTAL_Suction));
+        }
+    }
+}
+
+//=========================================================
+// POLICY P4: Dissecting Cooldown Period
+// If Dissecting was used for >=5 consecutive frames, it must
+// remain off for >=5 frames before being used again
+//=========================================================
+policy p4_cooldown_dissecting of surgical_policy {
+    states {
+        s0 {
+            -> violation on (Dissecting && IN_COOLDOWN_Dissecting) recover Dissecting := 0;
+            -> s0 on (!Dissecting);
+            -> s0 on (Dissecting && !IN_COOLDOWN_Dissecting);
+        }
+    }
+}
+
+//=========================================================
+// POLICY P5: Cusa Requires Prior Dissecting Usage
+// Cusa cannot be used unless Dissecting has been used
+// at least once previously in the surgery
+//=========================================================
+policy p5_precedence_cusa of surgical_policy {
+    states {
+        s0 {
+            -> violation on (Cusa && !Dissecting_Ever_Used) recover Cusa := 0;
+            -> s0 on (!Cusa);
+            -> s0 on (Cusa && Dissecting_Ever_Used);
+        }
+    }
+}
