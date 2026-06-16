@@ -47,7 +47,6 @@
 - [📂 Repository Structure](#-repository-structure)
 - [🚀 Getting Started](#-getting-started)
 - [📚 References](#-references)
-- [👥 Authors](#-authors)
 
 </details>
 
