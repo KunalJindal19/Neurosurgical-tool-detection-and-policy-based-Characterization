@@ -1,0 +1,1161 @@
+[1m
+╔═══════════════════════════════════════════════════════════════╗
+║     SURGICAL POLICY ENFORCER — RUNTIME MONITOR OUTPUT       ║
+╚═══════════════════════════════════════════════════════════════╝
+[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 01[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Other
+[1m  Consecutive ON:  [0mSuction=1  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=1  Dissecting=1  Cusa=1
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 02[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=1  Bipolar=2  Dissecting=2  Cusa=2
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 03[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=2  Bipolar=3  Dissecting=3  Cusa=3
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 04[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=3  Bipolar=4  Dissecting=4  Cusa=4
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 05[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=4  Bipolar=5  Dissecting=5  Cusa=5
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 06[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=5  Bipolar=6  Dissecting=6  Cusa=6
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 07[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=6  Bipolar=7  Dissecting=7  Cusa=7
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 08[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=7  Bipolar=8  Dissecting=8  Cusa=8
+[1m  Total Suction: [0m1[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 09[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Other
+[1m  Consecutive ON:  [0mSuction=1  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=9  Dissecting=9  Cusa=9
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 10[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=1  Bipolar=10  Dissecting=10  Cusa=10
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 11[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=2  Bipolar=11  Dissecting=11  Cusa=11
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 12[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=3  Bipolar=12  Dissecting=12  Cusa=12
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 13[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=4  Bipolar=13  Dissecting=13  Cusa=13
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 14[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=5  Bipolar=14  Dissecting=14  Cusa=14
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 15[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=6  Bipolar=15  Dissecting=15  Cusa=15
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 16[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=7  Bipolar=16  Dissecting=16  Cusa=16
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 17[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=8  Bipolar=17  Dissecting=17  Cusa=17
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 18[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=9  Bipolar=18  Dissecting=18  Cusa=18
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 19[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=10  Bipolar=19  Dissecting=19  Cusa=19
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 20[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=11  Bipolar=0  Dissecting=20  Cusa=20
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 21[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=12  Bipolar=1  Dissecting=21  Cusa=21
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 22[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=13  Bipolar=2  Dissecting=22  Cusa=22
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 23[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=14  Bipolar=3  Dissecting=23  Cusa=23
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 24[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=15  Bipolar=4  Dissecting=24  Cusa=24
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 25[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=16  Bipolar=5  Dissecting=25  Cusa=25
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 26[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=17  Bipolar=6  Dissecting=26  Cusa=26
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 27[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=18  Bipolar=7  Dissecting=27  Cusa=27
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 28[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=19  Bipolar=8  Dissecting=28  Cusa=28
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 29[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=20  Bipolar=9  Dissecting=29  Cusa=29
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 30[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=21  Bipolar=10  Dissecting=30  Cusa=30
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 31[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=22  Bipolar=11  Dissecting=31  Cusa=31
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 32[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=23  Bipolar=12  Dissecting=32  Cusa=32
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 33[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=24  Bipolar=13  Dissecting=33  Cusa=33
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 34[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=25  Bipolar=14  Dissecting=34  Cusa=34
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 35[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=26  Bipolar=15  Dissecting=35  Cusa=35
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 36[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=27  Bipolar=16  Dissecting=36  Cusa=36
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 37[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=28  Bipolar=17  Dissecting=37  Cusa=37
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 38[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=29  Bipolar=18  Dissecting=38  Cusa=38
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 39[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=30  Bipolar=19  Dissecting=39  Cusa=39
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 40[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=31  Bipolar=20  Dissecting=40  Cusa=40
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 41[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mOther
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=32  Bipolar=21  Dissecting=41  Cusa=41
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 42[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=33  Bipolar=22  Dissecting=42  Cusa=42
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 43[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=34  Bipolar=0  Dissecting=43  Cusa=43
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 44[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0m(none)
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=35  Bipolar=1  Dissecting=44  Cusa=44
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 45[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=36  Bipolar=0  Dissecting=45  Cusa=45
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 46[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=2  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=37  Bipolar=0  Dissecting=46  Cusa=46
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mNO
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 47[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=3  Dissecting=1  Cusa=0
+[1m  Consecutive OFF: [0mSuction=38  Bipolar=0  Dissecting=0  Cusa=47
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 48[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=4  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=39  Bipolar=0  Dissecting=1  Cusa=48
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 49[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=5  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=40  Bipolar=0  Dissecting=2  Cusa=49
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 50[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=6  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=41  Bipolar=0  Dissecting=3  Cusa=50
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 51[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=7  Dissecting=1  Cusa=0
+[1m  Consecutive OFF: [0mSuction=42  Bipolar=0  Dissecting=0  Cusa=51
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 52[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps, Other, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=8  Dissecting=2  Cusa=0
+[1m  Consecutive OFF: [0mSuction=43  Bipolar=0  Dissecting=0  Cusa=52
+[1m  Total Suction: [0m2[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 53[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Other, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=1  Bipolar=0  Dissecting=3  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=53
+[1m  Total Suction: [0m3[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 54[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=2  Bipolar=1  Dissecting=4  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=54
+[1m  Total Suction: [0m4[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 55[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=3  Bipolar=0  Dissecting=5  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=55
+[1m  Total Suction: [0m5[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 56[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=4  Bipolar=0  Dissecting=6  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=2  Dissecting=0  Cusa=56
+[1m  Total Suction: [0m6[1m  | Cooldown Dissecting: [0mNO[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;31m    ✗ P2 VIOLATED: Dissecting exceeded max continuous usage (5 frames)![0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 57[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mBipolar Forceps
+[1m  Consecutive ON:  [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=1  Bipolar=0  Dissecting=1  Cusa=57
+[1m  Total Suction: [0m6[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 58[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps
+[1m  Consecutive ON:  [0mSuction=1  Bipolar=2  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=2  Cusa=58
+[1m  Total Suction: [0m7[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 59[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps, Cusa
+[1m  Consecutive ON:  [0mSuction=2  Bipolar=0  Dissecting=1  Cusa=1
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=0
+[1m  Total Suction: [0m8[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 60[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps, Cusa
+[1m  Consecutive ON:  [0mSuction=3  Bipolar=0  Dissecting=2  Cusa=2
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=2  Dissecting=0  Cusa=0
+[1m  Total Suction: [0m9[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 61[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Cusa
+[1m  Consecutive ON:  [0mSuction=4  Bipolar=0  Dissecting=0  Cusa=3
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=3  Dissecting=1  Cusa=0
+[1m  Total Suction: [0m10[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 62[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=5  Bipolar=0  Dissecting=1  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=4  Dissecting=0  Cusa=1
+[1m  Total Suction: [0m11[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 63[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=6  Bipolar=0  Dissecting=2  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=5  Dissecting=0  Cusa=2
+[1m  Total Suction: [0m12[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 64[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=7  Bipolar=0  Dissecting=3  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=6  Dissecting=0  Cusa=3
+[1m  Total Suction: [0m13[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 65[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=8  Bipolar=1  Dissecting=4  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=4
+[1m  Total Suction: [0m14[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 66[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=9  Bipolar=2  Dissecting=5  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=5
+[1m  Total Suction: [0m15[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;32m    ✓ P3 OK: Suction total usage within limits.[0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 67[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=10  Bipolar=3  Dissecting=6  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=6
+[1m  Total Suction: [0m16[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;31m    ✗ P2 VIOLATED: Dissecting exceeded max continuous usage (5 frames)![0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 68[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Bipolar Forceps, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=11  Bipolar=4  Dissecting=7  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=0  Dissecting=0  Cusa=7
+[1m  Total Suction: [0m17[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;31m    ✗ P1 VIOLATED: Suction and Bipolar are active together![0m
+[1;31m    ✗ P2 VIOLATED: Dissecting exceeded max continuous usage (5 frames)![0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 69[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=12  Bipolar=0  Dissecting=8  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=1  Dissecting=0  Cusa=8
+[1m  Total Suction: [0m18[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;31m    ✗ P2 VIOLATED: Dissecting exceeded max continuous usage (5 frames)![0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 70[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction, Dissecting Forceps
+[1m  Consecutive ON:  [0mSuction=13  Bipolar=0  Dissecting=9  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=2  Dissecting=0  Cusa=9
+[1m  Total Suction: [0m19[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;31m    ✗ P2 VIOLATED: Dissecting exceeded max continuous usage (5 frames)![0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;31m    ✗ P4 VIOLATED: Dissecting is active during cooldown period![0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 71[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction
+[1m  Consecutive ON:  [0mSuction=14  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=3  Dissecting=1  Cusa=10
+[1m  Total Suction: [0m20[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m  FRAME 72[0m
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Tools Present in Frame: [0mSuction
+[1m  Consecutive ON:  [0mSuction=15  Bipolar=0  Dissecting=0  Cusa=0
+[1m  Consecutive OFF: [0mSuction=0  Bipolar=4  Dissecting=2  Cusa=11
+[1m  Total Suction: [0m21[1m  | Cooldown Dissecting: [0mYES[1m  | Dissecting Ever Used: [0mYES
+[1;36m───────────────────────────────────────────────────────────────[0m
+[1m  Policy Evaluation Results:
+[0m[1;32m    ✓ P1 OK: No Suction + Bipolar conflict.[0m
+[1;32m    ✓ P2 OK: Dissecting continuous usage within limits.[0m
+[1;31m    ✗ P3 VIOLATED: Suction total usage exceeded 15 frames![0m
+[1;32m    ✓ P4 OK: Dissecting cooldown satisfied.[0m
+[1;32m    ✓ P5 OK: Cusa precedence satisfied.[0m
+[1;36m═══════════════════════════════════════════════════════════════[0m
+[1m
+╔═══════════════════════════════════════════════════════════════╗
+║                    SIMULATION COMPLETE                       ║
+╚═══════════════════════════════════════════════════════════════╝
+[0m

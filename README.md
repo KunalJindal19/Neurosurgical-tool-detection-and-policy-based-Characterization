@@ -574,7 +574,7 @@ viz.compare(surgery, baseline_pv, corrected_pv,
 
 # Build the runtime monitor executable
 cd easy-rte/example/surgical_policy
-gcc -o surgical_policy F_surgical_policy.c surgical_policy_main.c
+gcc -o surgical_policy F_surgical_policy.c surgical_policy_main.c $(python3-config --cflags --embed) $(python3-config --ldflags --embed)
 
 # Run the formal verification monitor against the tracking trace
 # The test_image.py script feeds the corrected bounding boxes into the monitor

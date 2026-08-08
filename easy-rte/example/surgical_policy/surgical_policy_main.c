@@ -11,6 +11,7 @@
 #define COLOR_YELLOW  "\033[1;33m"
 #define COLOR_BOLD    "\033[1m"
 #define COLOR_RESET   "\033[0m"
+#define NUM_FRAMES 100
 
 // Separator line width
 #define SEP "═══════════════════════════════════════════════════════════════"
@@ -133,7 +134,7 @@ int main() {
     }
 
     // ---------------- MAIN LOOP ----------------
-    for (int frame = 0; frame < 20; frame++) {
+    for (int frame = 0; frame <NUM_FRAMES; frame++) {
 
         // ===== RESET FSM states to s0 for independent per-frame evaluation =====
         enf._policy_p1_state = POLICY_STATE_surgical_policy_p1_s0;
@@ -170,9 +171,9 @@ int main() {
 
         if (PyList_Check(result)) {
             int len = PyList_Size(result);
-            int arr[20] = {0};
+            int arr[NUM_FRAMES] = {0};
 
-            for (int i = 0; i < len && i < 20; i++) {
+            for (int i = 0; i < len && i < NUM_FRAMES; i++) {
                 arr[i] = PyLong_AsLong(PyList_GetItem(result, i));
             }
             // -------- MAPPING --------

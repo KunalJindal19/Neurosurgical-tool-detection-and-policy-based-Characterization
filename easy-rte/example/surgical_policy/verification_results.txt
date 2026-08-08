@@ -1,0 +1,115 @@
+================================================================================
+  RUNTIME VERIFICATION SUMMARY — SURGICAL POLICY MONITOR
+================================================================================
+
+Policies:
+  P1: Suction + Bipolar cannot be active simultaneously
+  P2: Dissecting max continuous usage > 5 frames
+  P3: Suction cumulative total > 15 frames
+  P4: Dissecting used during cooldown period
+  P5: Cusa used without prior Dissecting usage
+
+--------------------------------------------------------------------------------
+TABLE 1: Per-Video Runtime Verification Summary
+--------------------------------------------------------------------------------
+
+Metric                                    |      Video 1      |      Video 2      |      Video 3      
+------------------------------------------+-------------------+-------------------+-------------------
+Total Frames                              |         72        |        104        |        131        
+
+  — Tool Presence —                       |                   |                   |                   
+  Suction (frames / %)                    |     21 (29.2%)    |      0 (0.0%)     |     26 (19.8%)    
+  Bipolar (frames / %)                    |     17 (23.6%)    |      1 (1.0%)     |     18 (13.7%)    
+  Dissecting (frames / %)                 |     18 (25.0%)    |      1 (1.0%)     |     46 (35.1%)    
+  Cusa (frames / %)                       |      3 (4.2%)     |     60 (57.7%)    |     30 (22.9%)    
+
+  — Max Consecutive ON —                  |                   |                   |                   
+  Suction                                 |         15        |         0         |         9         
+  Bipolar                                 |         8         |         1         |         5         
+  Dissecting                              |         9         |         1         |         17        
+  Cusa                                    |         3         |         17        |         7         
+
+  — Policy Violations —                   |                   |                   |                   
+  P1: Suction+Bipolar                     |         6         |         0         |         5         
+  P2: Dissecting Overuse                  |         5         |         0         |         18        
+  P3: Suction Total                       |         6         |         0         |         11        
+  P4: Dissecting Cooldown                 |         11        |         0         |         16        
+  P5: Cusa Precedence                     |         0         |         5         |         0         
+------------------------------------------+-------------------+-------------------+-------------------
+Total Violation Events                    |         28        |         5         |         50        
+Frames with Violation(s)                  |         16        |         5         |         41        
+Compliant Frames                          |         56        |         99        |         90        
+Compliance Rate                           |       77.8%       |       95.2%       |       68.7%       
+First Violation at Frame                  |         54        |         9         |         6         
+
+
+--------------------------------------------------------------------------------
+TABLE 2: Violated Frame Numbers (per policy, per video)
+--------------------------------------------------------------------------------
+
+  Video 1:
+    P1: Suction+Bipolar: frames [54, 58, 65, 66, 67, 68]
+    P2: Dissecting Overuse: frames [56, 67, 68, 69, 70]
+    P3: Suction Total: frames [67, 68, 69, 70, 71, 72]
+    P4: Dissecting Cooldown: frames [59, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70]
+    P5: Cusa Precedence: — (no violations)
+
+  Video 2:
+    P1: Suction+Bipolar: — (no violations)
+    P2: Dissecting Overuse: — (no violations)
+    P3: Suction Total: — (no violations)
+    P4: Dissecting Cooldown: — (no violations)
+    P5: Cusa Precedence: frames [9, 12, 13, 14, 16]
+
+  Video 3:
+    P1: Suction+Bipolar: frames [96, 99, 100, 101, 102]
+    P2: Dissecting Overuse: frames [6, 7, 14, 15, 22, 23, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131]
+    P3: Suction Total: frames [66, 67, 68, 69, 70, 71, 96, 99, 100, 101, 102]
+    P4: Dissecting Cooldown: frames [9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 28, 29]
+    P5: Cusa Precedence: — (no violations)
+
+
+================================================================================
+  LaTeX TABLE (ready to paste into your paper)
+================================================================================
+
+\begin{table}[htbp]
+\centering
+\caption{Runtime Verification Results Across Surgical Videos}
+\label{tab:runtime_results}
+\begin{tabular}{lccc}
+\hline
+\textbf{Metric} & \textbf{Video 1} & \textbf{Video 2} & \textbf{Video 3} \\
+\hline
+\hline
+Total Frames & 72 & 104 & 131 \\
+\hline
+\multicolumn{4}{l}{\textit{Tool Presence (frames / \%)}} \\
+\hline
+\quad Suction & 21 (29.2\%) & 0 (0.0\%) & 26 (19.8\%) \\
+\quad Bipolar & 17 (23.6\%) & 1 (1.0\%) & 18 (13.7\%) \\
+\quad Dissecting & 18 (25.0\%) & 1 (1.0\%) & 46 (35.1\%) \\
+\quad Cusa & 3 (4.2\%) & 60 (57.7\%) & 30 (22.9\%) \\
+\hline
+\multicolumn{4}{l}{\textit{Max Consecutive ON (frames)}} \\
+\hline
+\quad Suction & 15 & 0 & 9 \\
+\quad Bipolar & 8 & 1 & 5 \\
+\quad Dissecting & 9 & 1 & 17 \\
+\quad Cusa & 3 & 17 & 7 \\
+\hline
+\multicolumn{4}{l}{\textit{Policy Violations (frame count)}} \\
+\hline
+\quad P1: Suction+Bipolar & 6 & 0 & 5 \\
+\quad P2: Dissecting Overuse & 5 & 0 & 18 \\
+\quad P3: Suction Total & 6 & 0 & 11 \\
+\quad P4: Dissecting Cooldown & 11 & 0 & 16 \\
+\quad P5: Cusa Precedence & 0 & 5 & 0 \\
+\hline
+Total Violation Events & 28 & 5 & 50 \\
+Frames with Violation(s) & 16 & 5 & 41 \\
+Compliance Rate & 77.8\% & 95.2\% & 68.7\% \\
+First Violation Frame & 54 & 9 & 6 \\
+\hline
+\end{tabular}
+\end{table}
