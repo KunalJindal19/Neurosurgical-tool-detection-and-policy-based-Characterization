@@ -12,27 +12,32 @@ typedef uint64_t dtimer_t;
 //For each policy, we need an enum type for the state machine
 
 enum surgical_policy_policy_p1_states { 
-	POLICY_STATE_surgical_policy_p1_s0,
+	POLICY_STATE_surgical_policy_p1_s0, 
+	POLICY_STATE_surgical_policy_p1_s1,
 	POLICY_STATE_surgical_policy_p1_violation 
 };
 
 enum surgical_policy_policy_p2_dissecting_time_states { 
-	POLICY_STATE_surgical_policy_p2_dissecting_time_s0,
+	POLICY_STATE_surgical_policy_p2_dissecting_time_s0, 
+	POLICY_STATE_surgical_policy_p2_dissecting_time_s1,
 	POLICY_STATE_surgical_policy_p2_dissecting_time_violation 
 };
 
 enum surgical_policy_policy_p3_total_suction_states { 
-	POLICY_STATE_surgical_policy_p3_total_suction_s0,
+	POLICY_STATE_surgical_policy_p3_total_suction_s0, 
+	POLICY_STATE_surgical_policy_p3_total_suction_s1,
 	POLICY_STATE_surgical_policy_p3_total_suction_violation 
 };
 
 enum surgical_policy_policy_p4_cooldown_dissecting_states { 
-	POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s0,
+	POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s0, 
+	POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1,
 	POLICY_STATE_surgical_policy_p4_cooldown_dissecting_violation 
 };
 
 enum surgical_policy_policy_p5_precedence_cusa_states { 
-	POLICY_STATE_surgical_policy_p5_precedence_cusa_s0,
+	POLICY_STATE_surgical_policy_p5_precedence_cusa_s0, 
+	POLICY_STATE_surgical_policy_p5_precedence_cusa_s1,
 	POLICY_STATE_surgical_policy_p5_precedence_cusa_violation 
 };
 

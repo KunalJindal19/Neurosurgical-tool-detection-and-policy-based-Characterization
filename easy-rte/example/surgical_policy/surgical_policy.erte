@@ -32,13 +32,32 @@ interface of surgical_policy {
 }
 
 //=========================================================
+// FSM STRUCTURE (common to all policies)
+// Each policy uses two safe states plus the violation state:
+//   s0 : the monitored tool is inactive (initial state)
+//   s1 : the monitored tool is active and compliant
+// Splitting the safe behaviour across s0/s1 lets every transition
+// carry a single conjunctive guard instead of one disjunctive
+// self-loop. The violation guard is identical in s0 and s1, so the
+// accepted traces are exactly those of the original policies.
+//=========================================================
+
+//=========================================================
 // POLICY P1: Suction and Bipolar cannot be active together
 //=========================================================
 policy p1 of surgical_policy {
     states {
+        // Suction inactive
         s0 {
             -> violation on (Suction && Bipolar) recover Bipolar := 0;
-            -> s0 on (!(Suction && Bipolar));
+            -> s0 on (!Suction);
+            -> s1 on (Suction && !Bipolar);
+        }
+        // Suction active without Bipolar
+        s1 {
+            -> violation on (Suction && Bipolar) recover Bipolar := 0;
+            -> s1 on (Suction && !Bipolar);
+            -> s0 on (!Suction);
         }
     }
 }
@@ -52,10 +71,17 @@ policy p2_dissecting_time of surgical_policy {
         constant uint32_t MAX_Dissecting := 5;
     }
     states {
+        // Dissecting inactive
         s0 {
             -> violation on (Dissecting && (CONSEC_Dissecting > MAX_Dissecting)) recover Dissecting := 0;
             -> s0 on (!Dissecting);
-            -> s0 on (Dissecting && (CONSEC_Dissecting <= MAX_Dissecting));
+            -> s1 on (Dissecting && (CONSEC_Dissecting <= MAX_Dissecting));
+        }
+        // Dissecting active within the continuous-usage limit
+        s1 {
+            -> violation on (Dissecting && (CONSEC_Dissecting > MAX_Dissecting)) recover Dissecting := 0;
+            -> s1 on (Dissecting && (CONSEC_Dissecting <= MAX_Dissecting));
+            -> s0 on (!Dissecting);
         }
     }
 }
@@ -69,10 +95,17 @@ policy p3_total_suction of surgical_policy {
         constant uint32_t MAX_TOTAL_Suction := 15;
     }
     states {
+        // Suction inactive
         s0 {
             -> violation on (Suction && (TOTAL_Suction > MAX_TOTAL_Suction)) recover Suction := 0;
             -> s0 on (!Suction);
-            -> s0 on (Suction && (TOTAL_Suction <= MAX_TOTAL_Suction));
+            -> s1 on (Suction && (TOTAL_Suction <= MAX_TOTAL_Suction));
+        }
+        // Suction active within the cumulative budget
+        s1 {
+            -> violation on (Suction && (TOTAL_Suction > MAX_TOTAL_Suction)) recover Suction := 0;
+            -> s1 on (Suction && (TOTAL_Suction <= MAX_TOTAL_Suction));
+            -> s0 on (!Suction);
         }
     }
 }
@@ -84,10 +117,17 @@ policy p3_total_suction of surgical_policy {
 //=========================================================
 policy p4_cooldown_dissecting of surgical_policy {
     states {
+        // Dissecting inactive
         s0 {
             -> violation on (Dissecting && IN_COOLDOWN_Dissecting) recover Dissecting := 0;
             -> s0 on (!Dissecting);
-            -> s0 on (Dissecting && !IN_COOLDOWN_Dissecting);
+            -> s1 on (Dissecting && !IN_COOLDOWN_Dissecting);
+        }
+        // Dissecting active outside a cooldown period
+        s1 {
+            -> violation on (Dissecting && IN_COOLDOWN_Dissecting) recover Dissecting := 0;
+            -> s1 on (Dissecting && !IN_COOLDOWN_Dissecting);
+            -> s0 on (!Dissecting);
         }
     }
 }
@@ -99,10 +139,17 @@ policy p4_cooldown_dissecting of surgical_policy {
 //=========================================================
 policy p5_precedence_cusa of surgical_policy {
     states {
+        // Cusa inactive
         s0 {
             -> violation on (Cusa && !Dissecting_Ever_Used) recover Cusa := 0;
             -> s0 on (!Cusa);
-            -> s0 on (Cusa && Dissecting_Ever_Used);
+            -> s1 on (Cusa && Dissecting_Ever_Used);
+        }
+        // Cusa active with the precedence requirement satisfied
+        s1 {
+            -> violation on (Cusa && !Dissecting_Ever_Used) recover Cusa := 0;
+            -> s1 on (Cusa && Dissecting_Ever_Used);
+            -> s0 on (!Cusa);
         }
     }
 }

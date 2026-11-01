@@ -136,12 +136,9 @@ int main() {
     // ---------------- MAIN LOOP ----------------
     for (int frame = 0; frame <NUM_FRAMES; frame++) {
 
-        // ===== RESET FSM states to s0 for independent per-frame evaluation =====
-        enf._policy_p1_state = POLICY_STATE_surgical_policy_p1_s0;
-        enf._policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_s0;
-        enf._policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_s0;
-        enf._policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s0;
-        enf._policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_s0;
+        // FSM states persist across frames (s0 = tool inactive, s1 = tool active
+        // and compliant). Violation guards are identical in s0 and s1, so each
+        // frame's verdict does not depend on the state carried over.
 
         // Reset all inputs
         inputs.Suction = 0;
@@ -229,7 +226,7 @@ int main() {
         // Save raw inputs BEFORE the enforcer modifies them
         inputs_surgical_policy_t raw_inputs = inputs;
 
-        // Run enforcer (each frame starts from s0 — independent evaluation)
+        // Run enforcer (advances each policy FSM from its current state)
         surgical_policy_run_via_enforcer(&enf, &inputs, &outputs);
 
         // Print colored per-frame report using RAW inputs for violation detection

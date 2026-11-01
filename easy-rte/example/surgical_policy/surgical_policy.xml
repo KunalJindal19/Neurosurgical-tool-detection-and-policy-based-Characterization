@@ -21,13 +21,38 @@
 		<InternalVars></InternalVars>
 		<Machine>
 			<PState>s0</PState>
+			<PState>s1</PState>
 			<PTransition>
 				<Source>s0</Source>
 				<Destination>s0</Destination>
-				<Condition>( !( Suction and Bipolar ) )</Condition>
+				<Condition>( !Suction )</Condition>
 			</PTransition>
 			<PTransition>
 				<Source>s0</Source>
+				<Destination>s1</Destination>
+				<Condition>( Suction and !Bipolar )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s1</Destination>
+				<Condition>( Suction and !Bipolar )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Suction )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Suction and Bipolar )</Condition>
+				<Recover>
+					<VarName>Bipolar</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
 				<Destination>violation</Destination>
 				<Condition>( Suction and Bipolar )</Condition>
 				<Recover>
@@ -43,6 +68,7 @@
 		</InternalVars>
 		<Machine>
 			<PState>s0</PState>
+			<PState>s1</PState>
 			<PTransition>
 				<Source>s0</Source>
 				<Destination>s0</Destination>
@@ -50,11 +76,30 @@
 			</PTransition>
 			<PTransition>
 				<Source>s0</Source>
-				<Destination>s0</Destination>
+				<Destination>s1</Destination>
 				<Condition>( Dissecting and ( CONSEC_Dissecting &lt;= MAX_Dissecting ) )</Condition>
 			</PTransition>
 			<PTransition>
+				<Source>s1</Source>
+				<Destination>s1</Destination>
+				<Condition>( Dissecting and ( CONSEC_Dissecting &lt;= MAX_Dissecting ) )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
 				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Dissecting and ( CONSEC_Dissecting &gt; MAX_Dissecting ) )</Condition>
+				<Recover>
+					<VarName>Dissecting</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
 				<Destination>violation</Destination>
 				<Condition>( Dissecting and ( CONSEC_Dissecting &gt; MAX_Dissecting ) )</Condition>
 				<Recover>
@@ -70,6 +115,7 @@
 		</InternalVars>
 		<Machine>
 			<PState>s0</PState>
+			<PState>s1</PState>
 			<PTransition>
 				<Source>s0</Source>
 				<Destination>s0</Destination>
@@ -77,11 +123,30 @@
 			</PTransition>
 			<PTransition>
 				<Source>s0</Source>
-				<Destination>s0</Destination>
+				<Destination>s1</Destination>
 				<Condition>( Suction and ( TOTAL_Suction &lt;= MAX_TOTAL_Suction ) )</Condition>
 			</PTransition>
 			<PTransition>
+				<Source>s1</Source>
+				<Destination>s1</Destination>
+				<Condition>( Suction and ( TOTAL_Suction &lt;= MAX_TOTAL_Suction ) )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Suction )</Condition>
+			</PTransition>
+			<PTransition>
 				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Suction and ( TOTAL_Suction &gt; MAX_TOTAL_Suction ) )</Condition>
+				<Recover>
+					<VarName>Suction</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
 				<Destination>violation</Destination>
 				<Condition>( Suction and ( TOTAL_Suction &gt; MAX_TOTAL_Suction ) )</Condition>
 				<Recover>
@@ -95,6 +160,7 @@
 		<InternalVars></InternalVars>
 		<Machine>
 			<PState>s0</PState>
+			<PState>s1</PState>
 			<PTransition>
 				<Source>s0</Source>
 				<Destination>s0</Destination>
@@ -102,11 +168,30 @@
 			</PTransition>
 			<PTransition>
 				<Source>s0</Source>
-				<Destination>s0</Destination>
+				<Destination>s1</Destination>
 				<Condition>( Dissecting and !IN_COOLDOWN_Dissecting )</Condition>
 			</PTransition>
 			<PTransition>
+				<Source>s1</Source>
+				<Destination>s1</Destination>
+				<Condition>( Dissecting and !IN_COOLDOWN_Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Dissecting )</Condition>
+			</PTransition>
+			<PTransition>
 				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Dissecting and IN_COOLDOWN_Dissecting )</Condition>
+				<Recover>
+					<VarName>Dissecting</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
 				<Destination>violation</Destination>
 				<Condition>( Dissecting and IN_COOLDOWN_Dissecting )</Condition>
 				<Recover>
@@ -120,6 +205,7 @@
 		<InternalVars></InternalVars>
 		<Machine>
 			<PState>s0</PState>
+			<PState>s1</PState>
 			<PTransition>
 				<Source>s0</Source>
 				<Destination>s0</Destination>
@@ -127,11 +213,30 @@
 			</PTransition>
 			<PTransition>
 				<Source>s0</Source>
-				<Destination>s0</Destination>
+				<Destination>s1</Destination>
 				<Condition>( Cusa and Dissecting_Ever_Used )</Condition>
 			</PTransition>
 			<PTransition>
+				<Source>s1</Source>
+				<Destination>s1</Destination>
+				<Condition>( Cusa and Dissecting_Ever_Used )</Condition>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
+				<Destination>s0</Destination>
+				<Condition>( !Cusa )</Condition>
+			</PTransition>
+			<PTransition>
 				<Source>s0</Source>
+				<Destination>violation</Destination>
+				<Condition>( Cusa and !Dissecting_Ever_Used )</Condition>
+				<Recover>
+					<VarName>Cusa</VarName>
+					<Value>0</Value>
+				</Recover>
+			</PTransition>
+			<PTransition>
+				<Source>s1</Source>
 				<Destination>violation</Destination>
 				<Condition>( Cusa and !Dissecting_Ever_Used )</Condition>
 				<Recover>

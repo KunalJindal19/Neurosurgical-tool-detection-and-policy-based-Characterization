@@ -73,6 +73,19 @@ void surgical_policy_run_input_enforcer_p1(enforcervars_surgical_policy_t* me, i
 			
 			break;
 
+		case POLICY_STATE_surgical_policy_p1_s1:
+			
+			if(inputs->Suction && inputs->Bipolar) {
+				//transition s1 -> violation on Suction and Bipolar
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				inputs->Bipolar = 0;
+				
+			} 
+			
+			break;
+
 		
 	}
 }
@@ -87,6 +100,19 @@ void surgical_policy_run_input_enforcer_p2_dissecting_time(enforcervars_surgical
 			
 			if(inputs->Dissecting && inputs->CONSEC_Dissecting > CONST_p2_dissecting_time_MAX_Dissecting) {
 				//transition s0 -> violation on Dissecting and CONSEC_Dissecting > MAX_Dissecting
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				inputs->Dissecting = 0;
+				
+			} 
+			
+			break;
+
+		case POLICY_STATE_surgical_policy_p2_dissecting_time_s1:
+			
+			if(inputs->Dissecting && inputs->CONSEC_Dissecting > CONST_p2_dissecting_time_MAX_Dissecting) {
+				//transition s1 -> violation on Dissecting and CONSEC_Dissecting > MAX_Dissecting
 				//select a transition to solve the problem
 				
 				//Recovery instructions manually provided.
@@ -119,6 +145,19 @@ void surgical_policy_run_input_enforcer_p3_total_suction(enforcervars_surgical_p
 			
 			break;
 
+		case POLICY_STATE_surgical_policy_p3_total_suction_s1:
+			
+			if(inputs->Suction && inputs->TOTAL_Suction > CONST_p3_total_suction_MAX_TOTAL_Suction) {
+				//transition s1 -> violation on Suction and TOTAL_Suction > MAX_TOTAL_Suction
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				inputs->Suction = 0;
+				
+			} 
+			
+			break;
+
 		
 	}
 }
@@ -142,6 +181,19 @@ void surgical_policy_run_input_enforcer_p4_cooldown_dissecting(enforcervars_surg
 			
 			break;
 
+		case POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1:
+			
+			if(inputs->Dissecting && inputs->IN_COOLDOWN_Dissecting) {
+				//transition s1 -> violation on Dissecting and IN_COOLDOWN_Dissecting
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				inputs->Dissecting = 0;
+				
+			} 
+			
+			break;
+
 		
 	}
 }
@@ -156,6 +208,19 @@ void surgical_policy_run_input_enforcer_p5_precedence_cusa(enforcervars_surgical
 			
 			if(inputs->Cusa && !(inputs->Dissecting_Ever_Used)) {
 				//transition s0 -> violation on Cusa and not (Dissecting_Ever_Used)
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				inputs->Cusa = 0;
+				
+			} 
+			
+			break;
+
+		case POLICY_STATE_surgical_policy_p5_precedence_cusa_s1:
+			
+			if(inputs->Cusa && !(inputs->Dissecting_Ever_Used)) {
+				//transition s1 -> violation on Cusa and not (Dissecting_Ever_Used)
 				//select a transition to solve the problem
 				
 				//Recovery instructions manually provided.
@@ -195,6 +260,18 @@ void surgical_policy_run_output_enforcer_p1(enforcervars_surgical_policy_t* me, 
 
 			break;
 
+		case POLICY_STATE_surgical_policy_p1_s1:
+			
+			if(inputs->Suction && inputs->Bipolar) {
+				//transition s1 -> violation on ( Suction and Bipolar )
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				
+			} 
+
+			break;
+
 		
 	}
 
@@ -202,9 +279,16 @@ void surgical_policy_run_output_enforcer_p1(enforcervars_surgical_policy_t* me, 
 	switch(me->_policy_p1_state) {
 		case POLICY_STATE_surgical_policy_p1_s0:
 			
-			if( !(inputs->Suction && inputs->Bipolar)) {
-				//transition s0 -> s0 on ( !( Suction and Bipolar ) )
+			if( !(inputs->Suction)) {
+				//transition s0 -> s0 on ( !Suction )
 				me->_policy_p1_state = POLICY_STATE_surgical_policy_p1_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Suction && !(inputs->Bipolar)) {
+				//transition s0 -> s1 on ( Suction and !Bipolar )
+				me->_policy_p1_state = POLICY_STATE_surgical_policy_p1_s1;
 				//set expressions
 				
 				break;
@@ -219,6 +303,35 @@ void surgical_policy_run_output_enforcer_p1(enforcervars_surgical_policy_t* me, 
 			
 			//ensure a transition was taken in this state
 			assert(false && "surgical_policy_p1_s0 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
+
+			break;
+
+		case POLICY_STATE_surgical_policy_p1_s1:
+			
+			if(inputs->Suction && !(inputs->Bipolar)) {
+				//transition s1 -> s1 on ( Suction and !Bipolar )
+				me->_policy_p1_state = POLICY_STATE_surgical_policy_p1_s1;
+				//set expressions
+				
+				break;
+			} 
+			if( !(inputs->Suction)) {
+				//transition s1 -> s0 on ( !Suction )
+				me->_policy_p1_state = POLICY_STATE_surgical_policy_p1_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Suction && inputs->Bipolar) {
+				//transition s1 -> violation on ( Suction and Bipolar )
+				me->_policy_p1_state = POLICY_STATE_surgical_policy_p1_violation;
+				//set expressions
+				
+				break;
+			} 
+			
+			//ensure a transition was taken in this state
+			assert(false && "surgical_policy_p1_s1 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
 
 			break;
 
@@ -251,6 +364,18 @@ void surgical_policy_run_output_enforcer_p2_dissecting_time(enforcervars_surgica
 
 			break;
 
+		case POLICY_STATE_surgical_policy_p2_dissecting_time_s1:
+			
+			if(inputs->Dissecting && inputs->CONSEC_Dissecting > CONST_p2_dissecting_time_MAX_Dissecting) {
+				//transition s1 -> violation on ( Dissecting and ( CONSEC_Dissecting > MAX_Dissecting ) )
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				
+			} 
+
+			break;
+
 		
 	}
 
@@ -266,8 +391,8 @@ void surgical_policy_run_output_enforcer_p2_dissecting_time(enforcervars_surgica
 				break;
 			} 
 			if(inputs->Dissecting && inputs->CONSEC_Dissecting <= CONST_p2_dissecting_time_MAX_Dissecting) {
-				//transition s0 -> s0 on ( Dissecting and ( CONSEC_Dissecting <= MAX_Dissecting ) )
-				me->_policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_s0;
+				//transition s0 -> s1 on ( Dissecting and ( CONSEC_Dissecting <= MAX_Dissecting ) )
+				me->_policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_s1;
 				//set expressions
 				
 				break;
@@ -282,6 +407,35 @@ void surgical_policy_run_output_enforcer_p2_dissecting_time(enforcervars_surgica
 			
 			//ensure a transition was taken in this state
 			assert(false && "surgical_policy_p2_dissecting_time_s0 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
+
+			break;
+
+		case POLICY_STATE_surgical_policy_p2_dissecting_time_s1:
+			
+			if(inputs->Dissecting && inputs->CONSEC_Dissecting <= CONST_p2_dissecting_time_MAX_Dissecting) {
+				//transition s1 -> s1 on ( Dissecting and ( CONSEC_Dissecting <= MAX_Dissecting ) )
+				me->_policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_s1;
+				//set expressions
+				
+				break;
+			} 
+			if( !(inputs->Dissecting)) {
+				//transition s1 -> s0 on ( !Dissecting )
+				me->_policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Dissecting && inputs->CONSEC_Dissecting > CONST_p2_dissecting_time_MAX_Dissecting) {
+				//transition s1 -> violation on ( Dissecting and ( CONSEC_Dissecting > MAX_Dissecting ) )
+				me->_policy_p2_dissecting_time_state = POLICY_STATE_surgical_policy_p2_dissecting_time_violation;
+				//set expressions
+				
+				break;
+			} 
+			
+			//ensure a transition was taken in this state
+			assert(false && "surgical_policy_p2_dissecting_time_s1 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
 
 			break;
 
@@ -314,6 +468,18 @@ void surgical_policy_run_output_enforcer_p3_total_suction(enforcervars_surgical_
 
 			break;
 
+		case POLICY_STATE_surgical_policy_p3_total_suction_s1:
+			
+			if(inputs->Suction && inputs->TOTAL_Suction > CONST_p3_total_suction_MAX_TOTAL_Suction) {
+				//transition s1 -> violation on ( Suction and ( TOTAL_Suction > MAX_TOTAL_Suction ) )
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				
+			} 
+
+			break;
+
 		
 	}
 
@@ -329,8 +495,8 @@ void surgical_policy_run_output_enforcer_p3_total_suction(enforcervars_surgical_
 				break;
 			} 
 			if(inputs->Suction && inputs->TOTAL_Suction <= CONST_p3_total_suction_MAX_TOTAL_Suction) {
-				//transition s0 -> s0 on ( Suction and ( TOTAL_Suction <= MAX_TOTAL_Suction ) )
-				me->_policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_s0;
+				//transition s0 -> s1 on ( Suction and ( TOTAL_Suction <= MAX_TOTAL_Suction ) )
+				me->_policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_s1;
 				//set expressions
 				
 				break;
@@ -345,6 +511,35 @@ void surgical_policy_run_output_enforcer_p3_total_suction(enforcervars_surgical_
 			
 			//ensure a transition was taken in this state
 			assert(false && "surgical_policy_p3_total_suction_s0 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
+
+			break;
+
+		case POLICY_STATE_surgical_policy_p3_total_suction_s1:
+			
+			if(inputs->Suction && inputs->TOTAL_Suction <= CONST_p3_total_suction_MAX_TOTAL_Suction) {
+				//transition s1 -> s1 on ( Suction and ( TOTAL_Suction <= MAX_TOTAL_Suction ) )
+				me->_policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_s1;
+				//set expressions
+				
+				break;
+			} 
+			if( !(inputs->Suction)) {
+				//transition s1 -> s0 on ( !Suction )
+				me->_policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Suction && inputs->TOTAL_Suction > CONST_p3_total_suction_MAX_TOTAL_Suction) {
+				//transition s1 -> violation on ( Suction and ( TOTAL_Suction > MAX_TOTAL_Suction ) )
+				me->_policy_p3_total_suction_state = POLICY_STATE_surgical_policy_p3_total_suction_violation;
+				//set expressions
+				
+				break;
+			} 
+			
+			//ensure a transition was taken in this state
+			assert(false && "surgical_policy_p3_total_suction_s1 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
 
 			break;
 
@@ -377,6 +572,18 @@ void surgical_policy_run_output_enforcer_p4_cooldown_dissecting(enforcervars_sur
 
 			break;
 
+		case POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1:
+			
+			if(inputs->Dissecting && inputs->IN_COOLDOWN_Dissecting) {
+				//transition s1 -> violation on ( Dissecting and IN_COOLDOWN_Dissecting )
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				
+			} 
+
+			break;
+
 		
 	}
 
@@ -392,8 +599,8 @@ void surgical_policy_run_output_enforcer_p4_cooldown_dissecting(enforcervars_sur
 				break;
 			} 
 			if(inputs->Dissecting && !(inputs->IN_COOLDOWN_Dissecting)) {
-				//transition s0 -> s0 on ( Dissecting and !IN_COOLDOWN_Dissecting )
-				me->_policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s0;
+				//transition s0 -> s1 on ( Dissecting and !IN_COOLDOWN_Dissecting )
+				me->_policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1;
 				//set expressions
 				
 				break;
@@ -408,6 +615,35 @@ void surgical_policy_run_output_enforcer_p4_cooldown_dissecting(enforcervars_sur
 			
 			//ensure a transition was taken in this state
 			assert(false && "surgical_policy_p4_cooldown_dissecting_s0 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
+
+			break;
+
+		case POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1:
+			
+			if(inputs->Dissecting && !(inputs->IN_COOLDOWN_Dissecting)) {
+				//transition s1 -> s1 on ( Dissecting and !IN_COOLDOWN_Dissecting )
+				me->_policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s1;
+				//set expressions
+				
+				break;
+			} 
+			if( !(inputs->Dissecting)) {
+				//transition s1 -> s0 on ( !Dissecting )
+				me->_policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Dissecting && inputs->IN_COOLDOWN_Dissecting) {
+				//transition s1 -> violation on ( Dissecting and IN_COOLDOWN_Dissecting )
+				me->_policy_p4_cooldown_dissecting_state = POLICY_STATE_surgical_policy_p4_cooldown_dissecting_violation;
+				//set expressions
+				
+				break;
+			} 
+			
+			//ensure a transition was taken in this state
+			assert(false && "surgical_policy_p4_cooldown_dissecting_s1 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
 
 			break;
 
@@ -440,6 +676,18 @@ void surgical_policy_run_output_enforcer_p5_precedence_cusa(enforcervars_surgica
 
 			break;
 
+		case POLICY_STATE_surgical_policy_p5_precedence_cusa_s1:
+			
+			if(inputs->Cusa && !(inputs->Dissecting_Ever_Used)) {
+				//transition s1 -> violation on ( Cusa and !Dissecting_Ever_Used )
+				//select a transition to solve the problem
+				
+				//Recovery instructions manually provided.
+				
+			} 
+
+			break;
+
 		
 	}
 
@@ -455,8 +703,8 @@ void surgical_policy_run_output_enforcer_p5_precedence_cusa(enforcervars_surgica
 				break;
 			} 
 			if(inputs->Cusa && inputs->Dissecting_Ever_Used) {
-				//transition s0 -> s0 on ( Cusa and Dissecting_Ever_Used )
-				me->_policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_s0;
+				//transition s0 -> s1 on ( Cusa and Dissecting_Ever_Used )
+				me->_policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_s1;
 				//set expressions
 				
 				break;
@@ -471,6 +719,35 @@ void surgical_policy_run_output_enforcer_p5_precedence_cusa(enforcervars_surgica
 			
 			//ensure a transition was taken in this state
 			assert(false && "surgical_policy_p5_precedence_cusa_s0 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
+
+			break;
+
+		case POLICY_STATE_surgical_policy_p5_precedence_cusa_s1:
+			
+			if(inputs->Cusa && inputs->Dissecting_Ever_Used) {
+				//transition s1 -> s1 on ( Cusa and Dissecting_Ever_Used )
+				me->_policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_s1;
+				//set expressions
+				
+				break;
+			} 
+			if( !(inputs->Cusa)) {
+				//transition s1 -> s0 on ( !Cusa )
+				me->_policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_s0;
+				//set expressions
+				
+				break;
+			} 
+			if(inputs->Cusa && !(inputs->Dissecting_Ever_Used)) {
+				//transition s1 -> violation on ( Cusa and !Dissecting_Ever_Used )
+				me->_policy_p5_precedence_cusa_state = POLICY_STATE_surgical_policy_p5_precedence_cusa_violation;
+				//set expressions
+				
+				break;
+			} 
+			
+			//ensure a transition was taken in this state
+			assert(false && "surgical_policy_p5_precedence_cusa_s1 must take a transition"); //if we are still here, then no transition was taken and we are no longer satisfying liveness
 
 			break;
 

@@ -44,17 +44,17 @@ int main() {
 
 	//randomise enforcer state, i.e. clock values and position (excepting violation state)
 	
-	enf_surgical_policy._policy_p1_state = nondet_surgical_policy_enf_p1_state() % 1;
+	enf_surgical_policy._policy_p1_state = nondet_surgical_policy_enf_p1_state() % 2;
 	
 	
-	enf_surgical_policy._policy_p2_dissecting_time_state = nondet_surgical_policy_enf_p2_dissecting_time_state() % 1;
+	enf_surgical_policy._policy_p2_dissecting_time_state = nondet_surgical_policy_enf_p2_dissecting_time_state() % 2;
 	
 	
-	enf_surgical_policy._policy_p3_total_suction_state = nondet_surgical_policy_enf_p3_total_suction_state() % 1;
+	enf_surgical_policy._policy_p3_total_suction_state = nondet_surgical_policy_enf_p3_total_suction_state() % 2;
 	
-	enf_surgical_policy._policy_p4_cooldown_dissecting_state = nondet_surgical_policy_enf_p4_cooldown_dissecting_state() % 1;
+	enf_surgical_policy._policy_p4_cooldown_dissecting_state = nondet_surgical_policy_enf_p4_cooldown_dissecting_state() % 2;
 	
-	enf_surgical_policy._policy_p5_precedence_cusa_state = nondet_surgical_policy_enf_p5_precedence_cusa_state() % 1;
+	enf_surgical_policy._policy_p5_precedence_cusa_state = nondet_surgical_policy_enf_p5_precedence_cusa_state() % 2;
 	
 
     //run the enforcer (i.e. tell CBMC to check this out)
